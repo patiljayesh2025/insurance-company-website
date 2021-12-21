@@ -1,0 +1,228 @@
+<div class="navbar">
+    <div class="container">
+        <div class="logo-style">
+            <span><i class="bi bi-check-square"></i></span>
+            <span>Insurance</span>&nbsp;&nbsp;
+            <span style="font-size: 15px;font-weight: 400;">Home</span>
+            <span style="font-size: 15px;font-weight: 400;">Contact Us</span>
+            <span style="font-size: 15px;font-weight: 400;">About</span>
+        </div>
+
+        <span *ngIf="isLoggedIn===false" style="font-size: 15px;font-weight: 400;">Login&nbsp;<i class="fas fa-sign-in-alt" data-bs-toggle="modal" data-bs-target="#myModal" type="button"></i></span>
+        <span *ngIf="isLoggedIn===true" style="font-size: 15px;font-weight: 400;">Logout&nbsp;<i class="fas fa-sign-out-alt" data-bs-toggle="modal" data-bs-target="#myModal" type="button"></i></span>
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- <div class="modal-header">
+                       
+                        </div> -->
+                    <div class="modal-body">
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                        <form class="container" [formGroup]="loginForm " (ngSubmit)="loginUser() ">
+                            <div class="login-title">
+                                <div style="font-size: 80px;">
+                                    <i class="bi bi-check-square"></i>
+                                </div>
+                                <span style="margin-top:40px;">Log in to discover new things.</span>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" placeholder="Enter User Id " class="form-control" formControlName="User_ID" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" formControlName="Password" placeholder="Enter Password" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <input style="background-color:rgb(230, 0, 35);color:white" type="submit" value="Submit " class="form-control">
+                            </div>
+                            <div class="footer">
+                                <div>
+                                    <strong style="color:green">{{loginText}}</strong>
+                                </div>
+
+                                <div>
+                                    <strong>Not having account ? <a href="#" data-bs-dismiss="modal"  data-bs-toggle="modal" data-bs-target="#myModal2"  type="button" >Create account</a> </strong>
+                                </div>
+                                <div>
+                                    <strong>Forgot your password ?</strong>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal" id="myModal2">
+            <div class="modal-dialog">
+                <div class="modal-content" style="height:600px">
+                    <!-- <div class="modal-header">
+                       
+                        </div> -->
+                    <div class="modal-body">
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+                        <form class="container" action="" [formGroup]="registerForm" (ngSubmit)='addUser()'>
+                            <div class="login-title ">
+                                <div style="font-size: 80px; ">
+                                    <i class="bi bi-check-square "></i>
+                                </div>
+                                <span style="margin-top:40px; ">Register to discover new things.</span>
+                            </div>
+                            <div class="form-group ">
+                                <input type="number" placeholder="Enter User Id " formControlName="User_ID" class="form-control " required>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" placeholder="Enter Password " formControlName="Password" class="form-control " required>
+                            </div>
+                            <div class="form-group ">
+                                <input type="text" placeholder="Enter Role " formControlName="Role" class="form-control " required>
+                            </div>
+                            <div class="form-group">
+                                <input style="background-color:rgb(230, 0, 35);color:white " type="submit" value="Submit" class="form-control">
+                            </div>
+                            <div class="footer ">
+                                <div>
+                                    <strong>already having account ? <a href="# " data-bs-dismiss="modal"  data-bs-toggle="modal"  data-bs-target="#myModal"  type="button ">Login to your account</a> </strong>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header">
+    <div class="heading ">
+        <span>Insurance&nbsp;&nbsp;Bazaa₹</span>
+    </div>
+
+    <div class="sub-heading ">
+        <span>Insurance bazaar is an Indian insurance aggregator and multinational financial technology company based in pune.</span>
+    </div>
+
+</div>
+<!-- Modal For Registration   -->
+
+
+
+<div class="cover">
+    <div class="container middle">
+
+        <!-- <form action=" " [formGroup]="policyForm " (ngSubmit)='updatePolicy() '>
+        <input type="number " placeholder="Enter Policy Number " formControlName="PolicyNumber ">
+        <input type="text " placeholder="Enter Name " formControlName="Name ">
+        <input type="number " placeholder="Enter Amount " formControlName="Amount ">
+        <input type="number " placeholder="Enter Maturity Amount " formControlName="MaturityAmount ">
+        <input type="text " placeholder="Enter Nominee Name " formControlName="Nominee ">
+        <input type="submit " value="Update ">
+        <input type="submit " value="Submit ">
+    </form>
+
+    <form action=" " [formGroup]="registerForm " (ngSubmit)='addUser() '>
+        <input type="number " placeholder="Enter User Id " formControlName="User_ID ">
+        <input type="password " placeholder="Enter Password " formControlName="Password ">
+        <input type="text " placeholder="Enter Role " formControlName="Role ">
+        <input type="submit " value="Submit ">
+    </form>
+
+    <form action=" " [formGroup]="loginForm " (ngSubmit)='loginUser() '>
+        <h1>Login Form</h1>
+        <input type="number " placeholder="Enter User Id " formControlName="User_ID ">
+        <input type="password " placeholder="Enter Password " formControlName="Password ">
+        <input type="submit " value="Submit ">
+        <h5>{{loginText}}</h5>
+    </form> -->
+
+        <!-- <h1>Policies Record</h1>
+    <button (click)="deletePolicy() ">Delete</button>
+    <h5>{{loginText}}</h5>
+    <div class=" row " *ngFor="let policy of myPolicies ">
+        <span><strong>PolicyNumber :</strong>&nbsp;&nbsp;{{policy.PolicyNumber}}</span>
+        <span><strong>Name :</strong>&nbsp;&nbsp;{{policy.Name}}</span>
+        <span><strong>Amount :</strong>&nbsp;&nbsp;{{policy.Amount}}</span>
+        <span><strong>Maturity Amount :</strong>&nbsp;&nbsp;{{policy.MaturityAmount}}</span>
+        <span><strong>Nominee :</strong>&nbsp;&nbsp;{{policy.Nominee}}</span>
+    </div> -->
+        <div class="row" *ngIf="isLoggedIn===true">
+            <div class="col-md-6 styled-div">
+
+                <div class="div-head">
+                    <strong>Policies</strong>
+                </div>
+                <div class="div-body">
+                    <form action=" " [formGroup]="policyForm" class="container">
+
+                        <div class="policy-form">
+                            <div class="form-group">
+                                <input type="number " placeholder="Enter Policy Number " [(ngModel)]="pNum" formControlName="PolicyNumber" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text " placeholder="Enter Name " [(ngModel)]="name" formControlName="Name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="number " placeholder="Enter Amount " [(ngModel)]="amount" formControlName="Amount" class="form-control ">
+                            </div>
+
+                            <div class="form-group ">
+                                <input type="number " placeholder="Enter Maturity Amount " [(ngModel)]="mAmount" formControlName="MaturityAmount" class="form-control ">
+                            </div>
+                            <div class="form-group ">
+                                <input type="text " placeholder="Enter Nominee Name " [(ngModel)]="nominee" formControlName="Nominee" class="form-control ">
+                            </div>
+                            <div class="form-group" *ngIf="update===true">
+                                <input (click)='updatePolicy()' style="background-color:#5b2677;color:white " type="submit" value="Update " class="form-control ">
+                            </div>
+                            <div class="form-group " *ngIf="update===false">
+                                <button (click)="submitPolicyData()" style="background-color:#5b2677;color:white " class="form-control ">Submit</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <table class="styled-table " style="width: 550px; ">
+                    <thead>
+                        <th>PolicyNumber</th>
+                        <th>Name</th>
+                        <th>Amount</th>
+                        <th>Maturity Amount</th>
+                        <th>Nominee</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </thead>
+
+                    <tbody *ngFor="let policy of myPolicies " style="color: black;margin-left:20px; ">
+                        <tr>
+                            <td>{{policy.PolicyNumber}}</td>
+                            <td>{{policy.Name}}</td>
+                            <td>{{policy.Amount}}</td>
+                            <td>{{policy.MaturityAmount}}</td>
+                            <td>{{policy.Nominee}}</td>
+                            <td>
+                                <button style="color:blue " (click)='fillFormData(policy.PolicyNumber,policy.Name,policy.Amount,policy.MaturityAmount,policy.Nominee) ' class=" form-control btn "><i class="bi bi-pencil-fill "></i></button></td>
+                            <td><button (click)='deletePolicy(policy.PolicyNumber) ' class="btn form-control " style="color:red "><i class="bi bi-trash-fill "></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="login-msg" *ngIf="isLoggedIn===false">
+        <strong>Please Login To Access Records!</strong>
+    </div>
+</div>
+<div class="footer">
+
+</div>
